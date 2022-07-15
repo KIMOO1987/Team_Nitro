@@ -20,7 +20,7 @@ rm -rf $PLUGINPATH/PICONS/piconCrypt
 # Download and install White Picons
 cd /tmp
 set -e
-wget "https://github.com/kaleem87/Team_Nitro/raw/main/WhitePicons.tar.gz"
+wget "https://github.com/biko-73/NitroAdvanceFHD//raw/main/WhitePicons.tar.gz"
 tar -xzf WhitePicons.tar.gz -C /
 set +e
 cd ..
