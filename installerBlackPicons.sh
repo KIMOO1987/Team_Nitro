@@ -20,7 +20,7 @@ rm -rf $PLUGINPATH/PICONS/piconCrypt
 # Download and install Black Picon
 cd /tmp
 set -e
-wget "https://github.com/kaleem87/Team_Nitro/raw/main/BlackPicons.tar.gz"
+wget "https://github.com/biko-73/NitroAdvanceFHD//raw/main/BlackPicons.tar.gz"
 tar -xzf BlackPicons.tar.gz -C /
 set +e
 cd ..
