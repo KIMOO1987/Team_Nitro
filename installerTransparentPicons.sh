@@ -20,7 +20,7 @@ rm -rf $PLUGINPATH/PICONS/piconCrypt
 # Download and install Transparent Picons
 cd /tmp
 set -e
-wget "https://github.com/biko-73/NitroAdvanceFHD//raw/main/TransparentPicons.tar.gz"
+wget "https://drive.google.com/uc?export=download&id=1NJz4Vmc-jXNQGvkQB5ObrAAlCZ7-KLfi"
 tar -xzf TransparentPicons.tar.gz -C /
 set +e
 cd ..
