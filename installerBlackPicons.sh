@@ -20,7 +20,7 @@ rm -rf $PLUGINPATH/PICONS/piconCrypt
 # Download and install Black Picon
 cd /tmp
 set -e
-wget -O "https://drive.google.com/uc?export=download&id=1bpDnxvIPK5MEy4yQ_RGHrKyFPo8WoE4z"
+wget "https://drive.google.com/uc?export=download&id=1bpDnxvIPK5MEy4yQ_RGHrKyFPo8WoE4z"
 tar -xzf BlackPicons.tar.gz -C /
 set +e
 cd ..
