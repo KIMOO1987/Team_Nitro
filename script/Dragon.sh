@@ -15,7 +15,7 @@ echo 'Downloading '$MY_FILE' ...'
 echo $MY_SEP
 echo ''
 
-wget -O /var/volatile/tmp/DragonFHD.tar.gz "https://onedrive.live.com/embed?cid=89E618BEC5025E42&resid=89E618BEC5025E42%211487&authkey=AE7bkzgSF_aPNdw"
+wget -O /var/volatile/tmp/DragonFHD.tar.gz "https://onedrive.live.com/download?cid=89E618BEC5025E42&resid=89E618BEC5025E42%211487&authkey=AE7bkzgSF_aPNdw"
 
 rm -rf "/usr/share/enigma2/DragonFHD"
 
