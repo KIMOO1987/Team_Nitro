@@ -2,9 +2,9 @@
 ##########################################################
 version=2.0
 description="
-DesertFHD
-1- fix missing screen issues
-2- fix media player crush issue
-3- fix slow issue from DreamBox" !!!
+"DesertFHD"
+"1- fix missing screen issues"
+"2- fix media player crush issue"
+"3- fix slow issue from DreamBox"" !!!
 #########################################################
 # ----------------------------------------------------------------------------------------------------------
