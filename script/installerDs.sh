@@ -1,72 +1,58 @@
 #!/bin/sh
+##########################################################
+version=1.1
+description="DesertFHD" !!!
+#########################################################
 
-# ==============================================
-# SCRIPT : DOWNLOAD AND INSTALL DesertFHD #
-# =====================================================================================================================
-# Command: wget https://raw.githubusercontent.com/kaleem87/Team_Nitro/main/script/installerDs.sh -O - | /bin/sh #
-# =====================================================================================================================
+#########################################################
+MY_FILE="enigma2-plugin-skins-desertfhd_v2.0_all.ipk"
+MY_TMP_FILE="/var/volatile/tmp/"$MY_FILE
+#########################################################
 
-MY_IPK="enigma2-plugin-skins-desertfhd_v2.0_all.ipk"
-
-# Decide : which package ?
-MY_MAIN_URL="https://onedrive.live.com/download?cid=89E618BEC5025E42&resid=89E618BEC5025E42%212004&authkey=AEOSbylrP_BLMN0"
-
-MY_TMP_FILE="/tmp/"$MY_IPK
-
-echo ''
-echo '************************************************************'
-echo '**                         STARTED                        **'
-echo '************************************************************'
-echo "**                 Uploaded by: Biko_73                   **"
-echo "**  https://www.tunisia-sat.com/forums/threads/3898738/   **"
-echo "************************************************************"
-echo ''
-
-# Remove previous file (if any)
-rm -f $MY_TMP_FILE > /dev/null 2>&1
-
-# Download package file
 MY_SEP='============================================================='
 echo $MY_SEP
-echo 'Downloading '$MY_IPK' ...'
+echo 'Downloading '$MY_FILE' ...'
 echo $MY_SEP
 echo ''
-wget -T 2 $MY_MAIN_URL -P "/tmp/"
-# Check download
+
+wget -O /var/volatile/tmp/enigma2-plugin-skins-desertfhd_v2.0_all.ipk --no-check-certificate "https://onedrive.live.com/download?cid=89E618BEC5025E42&resid=89E618BEC5025E42%212004&authkey=AEOSbylrP_BLMN0"
+
+rm -rf "/usr/lib/enigma2/python/Plugins/Extensions/TeamNitro"
+rm -rf "/usr/share/enigma2/DesertFHD"
+
+
 if [ -f $MY_TMP_FILE ]; then
-	# Install
+
 	echo ''
 	echo $MY_SEP
-	echo 'Installation started'
+	echo 'Extracting ...'
 	echo $MY_SEP
 	echo ''
-	if which dpkg > /dev/null 2>&1; then
-		dpkg -i --force-overwrite $MY_TMP_FILE
-		apt install -f -y
-	else
-		opkg install --force-reinstall $MY_TMP_FILE
-	fi
+	opkg install $MY_TMP_FILE
 	MY_RESULT=$?
 
-	# Result
-	echo ''
+	rm -f $MY_TMP_FILE > /dev/null 2>&1
+
 	echo ''
 	if [ $MY_RESULT -eq 0 ]; then
-		echo "   >>>>   SUCCESSFULLY INSTALLED   <<<<"
-		echo ''
-		echo "   >>>>         RESTARING         <<<<"
+         echo "########################################################################"
+         echo "#		Skin DesertFHD INSTALLED SUCCESSFULLY                 #"
+         echo "#                      BY TeamNitro - support on                       #"
+         echo "#              https://www.tunisia-sat.com/forums/forums               #"
+         echo "########################################################################"
+         echo "#        Sucessfully Download Please apply from skin selection         #"
+         echo "########################################################################"
 	else
 		echo "   >>>>   INSTALLATION FAILED !   <<<<"
-	fi
-	echo ''
-	echo '**************************************************'
-	echo '**                   FINISHED                   **'
-	echo '**************************************************'
-	echo ''
-	exit 0
+	fi;
+	 echo '**************************************************'
+	 echo '**                   FINISHED                   **'
+	 echo '**************************************************'
+	 echo ''
+	 exit 0
 else
-	echo ''
-	echo "Download failed !"
-	exit 1
+	 echo ''
+	 echo "Download failed !"
+	 exit 1
 fi
-# ------------------------------------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------------------------------
