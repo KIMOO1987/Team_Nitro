@@ -15,7 +15,7 @@ echo 'Downloading '$MY_FILE' ...'
 echo $MY_SEP
 echo ''
 
-wget -O /var/volatile/tmp/enigma2-plugin-skins-desertfhd_v2.0_all.ipk --no-check-certificate "https://onedrive.live.com/download?cid=89E618BEC5025E42&resid=89E618BEC5025E42%212004&authkey=AEOSbylrP_BLMN0"
+wget -O /var/volatile/tmp/enigma2-plugin-skins-desertfhd-v2.0-all.ipk --no-check-certificate "https://onedrive.live.com/download?cid=89E618BEC5025E42&resid=89E618BEC5025E42%212004&authkey=AEOSbylrP_BLMN0"
 
 rm -rf "/usr/lib/enigma2/python/Plugins/Extensions/TeamNitro"
 rm -rf "/usr/share/enigma2/DesertFHD"
