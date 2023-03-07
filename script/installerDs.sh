@@ -11,7 +11,7 @@ MY_TMP_FILE="/var/volatile/tmp/"$MY_FILE
 
 MY_SEP='============================================================='
 echo $MY_SEP
-echo 'Downloading '$MY_FILE' ...'
+echo 'Downloading DesertFHD' ...'
 echo $MY_SEP
 echo ''
 
@@ -28,7 +28,7 @@ if [ -f $MY_TMP_FILE ]; then
 	echo 'Extracting ...'
 	echo $MY_SEP
 	echo ''
-	opkg install $MY_TMP_FILE
+	opkg install /tmp/enigma2-plugin-skins-desertfhd_v2.0_all.ipk
 	MY_RESULT=$?
 
 	rm -f $MY_TMP_FILE > /dev/null 2>&1
