@@ -5,7 +5,7 @@ description="DesertFHD" !!!
 #########################################################
 
 #########################################################
-MY_FILE="enigma2-plugin-skins-desertfhd_v2.0_all.ipk"
+MY_FILE="enigma2-plugin-skins-desertfhd-v2.0-all.ipk"
 MY_TMP_FILE="/var/volatile/tmp/"$MY_FILE
 #########################################################
 
