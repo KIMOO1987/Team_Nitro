@@ -25,7 +25,7 @@ if [ -f $MY_TMP_FILE ]; then
 
 	echo ''
 	echo $MY_SEP
-	echo 'Extracting ...'
+	echo 'Installation started'
 	echo $MY_SEP
 	echo ''
 	opkg install --force-reinstall $MY_TMP_FILE
