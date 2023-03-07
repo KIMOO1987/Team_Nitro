@@ -32,7 +32,6 @@ echo 'Downloading '$MY_IPK' ...'
 echo $MY_SEP
 echo ''
 wget -T 2 $MY_MAIN_URL -P "/tmp/"
-
 # Check download
 if [ -f $MY_TMP_FILE ]; then
 	# Install
@@ -70,5 +69,4 @@ else
 	echo "Download failed !"
 	exit 1
 fi
-
 # ------------------------------------------------------------------------------------------------------------
