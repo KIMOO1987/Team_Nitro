@@ -6,20 +6,12 @@
 # Command: wget https://raw.githubusercontent.com/kaleem87/Team_Nitro/main/script/installerDs.sh -O - | /bin/sh #
 # =====================================================================================================================
 
-PACKAGE_DIR='Team_Nitro/main'
-
 MY_IPK="enigma2-plugin-skins-desertfhd_v2.0_all.ipk"
 
 # Decide : which package ?
 MY_MAIN_URL="https://onedrive.live.com/download?cid=89E618BEC5025E42&resid=89E618BEC5025E42%212004&authkey=AEOSbylrP_BLMN0"
-if which dpkg > /dev/null 2>&1; then
-	MY_FILE=$MY_DEB
-	MY_URL=$MY_MAIN_URL$PACKAGE_DIR'/'$MY_DEB
-else
-	MY_FILE=$MY_IPK
-	MY_URL=$MY_MAIN_URL
-fi
-MY_TMP_FILE="/tmp/"$MY_FILE
+
+MY_TMP_FILE="/tmp/"$MY_IPK
 
 echo ''
 echo '************************************************************'
@@ -36,10 +28,10 @@ rm -f $MY_TMP_FILE > /dev/null 2>&1
 # Download package file
 MY_SEP='============================================================='
 echo $MY_SEP
-echo 'Downloading '$MY_FILE' ...'
+echo 'Downloading '$MY_IPK' ...'
 echo $MY_SEP
 echo ''
-wget -T 2 $MY_URL -P "/tmp/"
+wget -T 2 $MY_MAIN_URL -P "/tmp/"
 
 # Check download
 if [ -f $MY_TMP_FILE ]; then
