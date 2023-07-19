@@ -1,25 +1,34 @@
 #!/bin/sh
-##########################################################
-version=2.0
-description="DesertFHD" !!!
+#########################################################
+version=3.0
+description="DesertFHD !!!"
 #########################################################
 
 #########################################################
-MY_FILE="enigma2-plugin-skins-desertfhd_v2.0_all.ipk"
-MY_TMP_FILE="/var/volatile/tmp/"$MY_FILE
+PACKAGE_DIR='TeamNitro/main/skins'
+MY_FILE="DesertFHD_v-3.0.tar.gz"
 #########################################################
+
+##############################################################################################################
+##
+## Script Purpose: Download and install TeamNitro skin
+##
+## Command: wget https://raw.githubusercontent.com/kaleem87/Team_Nitro/main/script/installerDs.sh -O - | /bin/sh
+##
+##############################################################################################################
+
+MY_MAIN_URL="https://raw.githubusercontent.com/kaleem87/"
+MY_URL=$MY_MAIN_URL$PACKAGE_DIR'/'$MY_FILE
+MY_TMP_FILE="/tmp/"$MY_FILE
+
+rm -f $MY_TMP_FILE > /dev/null 2>&1
 
 MY_SEP='============================================================='
 echo $MY_SEP
 echo 'Downloading '$MY_FILE' ...'
 echo $MY_SEP
 echo ''
-
-wget -O /var/volatile/tmp/enigma2-plugin-skins-desertfhd_v2.0_all.ipk --no-check-certificate "https://onedrive.live.com/download?cid=89E618BEC5025E42&resid=89E618BEC5025E42%212004&authkey=AEOSbylrP_BLMN0"
-
-rm -rf "/usr/lib/enigma2/python/Plugins/Extensions/TeamNitro"
-rm -rf "/usr/share/enigma2/DesertFHD"
-
+wget -T 2 $MY_URL -P "/tmp/"
 
 if [ -f $MY_TMP_FILE ]; then
 
@@ -28,31 +37,38 @@ if [ -f $MY_TMP_FILE ]; then
 	echo 'Extracting ...'
 	echo $MY_SEP
 	echo ''
-	opkg -install $MY_TMP_FILE
+	tar -xf $MY_TMP_FILE -C /
 	MY_RESULT=$?
 
 	rm -f $MY_TMP_FILE > /dev/null 2>&1
 
 	echo ''
+	echo ''
 	if [ $MY_RESULT -eq 0 ]; then
-         echo "########################################################################"
-         echo "#TeamNitro Control Center V2.0 & Skin DesertFHD INSTALLED SUCCESSFULLY #"
-         echo "#                      BY TeamNitro - support on                       #"
-         echo "#              https://www.tunisia-sat.com/forums/forums               #"
-         echo "########################################################################"
-         echo "#        Sucessfully Download Please apply from skin selection         #"
-         echo "########################################################################"
+        echo "#########################################################"
+        echo "#   DesertFHD Skin $version INSTALLED SUCCESSFULLY      #"
+        echo "#              BY NitroTeam - support on                #"
+        echo "#  https://www.tunisia-sat.com/forums/threads/4334347/  #"
+        echo "#########################################################"
+        echo "#           your Device will RESTART Now                #"
+        echo "#########################################################"		
+		if which systemctl > /dev/null 2>&1; then
+			sleep 2; systemctl restart enigma2
+		else
+			init 4; sleep 4; init 3;
+		fi
 	else
 		echo "   >>>>   INSTALLATION FAILED !   <<<<"
 	fi;
-	 echo '**************************************************'
-	 echo '**                   FINISHED                   **'
-	 echo '**************************************************'
-	 echo ''
-	 exit 0
+	echo ''
+	echo '**************************************************'
+	echo '**                   FINISHED                   **'
+	echo '**************************************************'
+	echo ''
+	exit 0
 else
-	 echo ''
-	 echo "Download failed !"
-	 exit 1
+	echo ''
+	echo "Download failed !"
+	exit 1
 fi
-# ----------------------------------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------------------------------------
