@@ -5,7 +5,7 @@ description="TeamNitro Control Center !!!"
 #########################################################
 
 #########################################################
-PACKAGE_DIR='TeamNitro/main/skins'
+PACKAGE_DIR='Team_Nitro/main/skins'
 MY_FILE="TeamNitro.tar.gz"
 #########################################################
 
